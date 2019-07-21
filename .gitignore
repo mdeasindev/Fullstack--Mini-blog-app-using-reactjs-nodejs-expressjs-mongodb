@@ -3,5 +3,3 @@
 /client/node_modules
 /server/.gitignore
 /client/.gitignore
-/server/yarn.lock
-/client/yarn.lock
