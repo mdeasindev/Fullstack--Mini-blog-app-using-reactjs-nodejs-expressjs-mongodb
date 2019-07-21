@@ -1,0 +1,192 @@
+body{
+    background-color: #e6ecf0;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Lato', sans-serif;
+}
+a{
+    color: rgb(6, 147, 227);
+}
+input:focus,
+textarea:focus,
+button:focus{
+    outline: none
+}
+
+/* Header */
+header#header-section {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 15px 0;
+}
+.logo a {
+    color: #333;
+    text-decoration: none;
+}
+.logo h1 {
+    font-size: 1.5em;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logo img {
+    width: 50px;
+    display: inline-block;
+    margin-right: 5px;
+}
+.main-menu {
+    text-align: right;
+    padding: 3px 0;
+}
+.main-menu ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.main-menu ul li {
+    display: inline-block;
+    padding: 10px;
+}
+.main-menu ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: .4s;
+}
+.main-menu ul li a:hover,
+.main-menu ul li.active a,
+.main-menu ul li a.active {
+    color: tomato;
+}
+
+/* Main Content */
+main#main-app {
+    padding: 50px 0;
+}
+.main-content-left {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+}
+.post-box {
+    text-align: right;
+}
+.post-box textarea {
+    width: 100%;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: left;
+}
+.post-box button {
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 7px 20px;
+    margin-top: 13px;
+}
+.post-box h2 {
+    text-align: left;
+    font-size: 1.2em;
+    background-color: rgb(6, 147, 227);
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 4px;
+}
+.posts-list {
+    padding-top: 50px;
+}
+.single-post {
+    border: 1px solid #ccc;
+    padding-bottom: 35px;
+    margin-bottom: 35px;
+    background-color: #fff;
+}
+.single-post:last-child {
+
+    margin: 0;
+}
+.single-post h2 {
+    background-color: rgb(6, 147, 227);
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+}
+.single-post span{
+    font-size: 12px;
+}
+.single-post p {
+    padding: 10px 20px;
+    margin: 0;
+}
+.single-post p:last-child{
+    padding-bottom: 0;
+}
+.sidebar {
+    background-color: #fff;
+    padding: 20px;
+}
+.ad {
+    border: 1px solid #ccc;
+    text-align: center;
+    height: 200px;
+}
+.ad p {
+    color: #ccc;
+    line-height: 200px;
+    font-size: 2em;
+    font-style: italic;
+}
+.section-heading {
+    margin-bottom: 35px;
+    display: inline-block;
+    padding: 13px 49px;
+    position: relative;
+    padding-left: 0;
+}
+/* Login and register */
+span.info-message {
+    display: block;
+    margin: 10px 0;
+}
+.login-form form,
+.register-form form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/*  Extra */
+span.delete-post,
+span.edit-post  {
+    cursor: pointer;
+    float: right;
+    margin: 0 10px; 
+}
+span.delete-post img,
+span.edit-post img {
+    width: 20px;
+    height: 20px;
+}
+.single-post h2 button {
+    float: right;
+    padding: 5px;
+    position: relative;
+    top: -7px;
+    font-weight: bold;
+}
+.single-post form textarea {
+    width: 100%;
+    border: none;
+    padding: 10px;
+}
+.single-post form textarea.is-invalid {
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 0;
+    border-top: 0;
+    border-color: indianred;
+}
