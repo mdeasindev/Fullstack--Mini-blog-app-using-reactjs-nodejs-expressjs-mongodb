@@ -14,7 +14,7 @@ import Page404 from './pages/Page404';
 
 
 const App = props => {
-    const { token } = useContext(AuthContext);
+  const authContext = useContext(AuthContext);
 
     return (
       <div className="App">
@@ -32,7 +32,7 @@ const App = props => {
                 <Switch>
                     <Route exact path="/" component={Home} />
 
-                    { Object.keys(token).length === 0 ?
+                    { Object.keys(authContext.token).length === 0 ?
                       <React.Fragment>
 
                         <RegisterContextProvider>

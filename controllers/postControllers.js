@@ -5,11 +5,11 @@ var jwt = require('jsonwebtoken');
 
 
 const createPost = async (req, res) => {
-    const { message, user_id } = req.body;
-
+    const { message, user_id } = req.body.data;
+    
     let getToken = '';
-    if (req.headers.authorization) {
-        getToken = req.headers.authorization.split(' ')[1]
+    if (req.body.headers.authorization) {
+        getToken = req.body.headers.authorization.split(' ')[1]
     }
     
     jwt.verify(getToken, process.env.JWT_PRIVATE_KEY, function(err, decoded) {

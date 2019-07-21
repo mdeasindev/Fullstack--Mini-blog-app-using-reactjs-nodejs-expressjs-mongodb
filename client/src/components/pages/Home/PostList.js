@@ -17,7 +17,7 @@ const PostList = ({posts}) => {
                 )
                 : 'No Posts Found!'
             
-        : 'loading...'
+        : ''
     )
     
 }

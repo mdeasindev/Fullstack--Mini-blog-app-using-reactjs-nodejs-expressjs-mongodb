@@ -28,7 +28,6 @@ const Login = props => {
                 success: res.data.message
             });
 
-            
             authContext.dispatch({
                 type: "SET_TOKEN",
                 token: jwtDecode(res.data.token)

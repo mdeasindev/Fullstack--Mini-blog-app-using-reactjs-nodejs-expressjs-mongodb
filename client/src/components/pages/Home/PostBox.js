@@ -3,12 +3,48 @@ import { Link } from 'react-router-dom';
 import { PostBoxContext } from '../../../Contexts/PostBoxContext';
 import { AuthContext } from '../../../Contexts/AuthContext';
 import { ThemeContext } from '../../../Contexts/ThemeContext';
+import axios from 'axios';
 
 const PostBox = props => {
 
     const themeContext = useContext(ThemeContext);
     const { token } = useContext(AuthContext);
     const postBoxContext = useContext(PostBoxContext);
+
+
+    const createPost = () => {
+        const data = {
+            message: postBoxContext.message,
+            user_id:  token._id,
+            name: token.name
+        }
+
+        if(postBoxContext.message){
+            axios.post('/api/user/posts', {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('jwt-sp-token')}`
+                },
+                data
+                })
+                .then(result => {
+                    themeContext.dispatch({
+                        type: "INSERT_POST",
+                        new_post: result.data.output
+                    });
+                    postBoxContext.dispatch({
+                        type: "SUCCESS"
+                    })
+                })
+                .catch(error => {
+
+                });
+        } else {
+            postBoxContext.dispatch({
+                type: "ERROR"
+            });
+        }
+    }
     
     return (
                           
@@ -37,24 +73,7 @@ const PostBox = props => {
                     <button onClick={(e) => {
                         if (Object.keys(token).length !== 0) {
                             e.preventDefault();
-
-                            if(postBoxContext.message) {
-                                themeContext.dispatch({
-                                    type: "INSERT_POST",
-                                    new_post: {
-                                        user_id: token._id,
-                                        name: token.name,
-                                        message: postBoxContext.message
-                                    }
-                                });
-                            }
-
-                            postBoxContext.dispatch({
-                                type: "CREATE_POST",
-                                user_id: token._id,
-                                name: token.name,
-                            });
-                        
+                            createPost();
                         }
 
                         
