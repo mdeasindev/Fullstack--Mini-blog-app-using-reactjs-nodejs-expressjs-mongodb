@@ -5,7 +5,7 @@ import './style.css';
 import axios from 'axios';
 import ThemeContextProvider from './Contexts/ThemeContext';
 import AuthContextProvider from './Contexts/AuthContext';
-axios.defaults.baseURL = "http://localhost:4000";
+// axios.defaults.baseURL = "http://localhost:4000";
 
 ReactDOM.render( <AuthContextProvider><ThemeContextProvider><App /></ThemeContextProvider></AuthContextProvider>, document.getElementById('root'));
 
